@@ -209,25 +209,21 @@ function display(text) {
 
 
 
-const correctSound = new Audio("correct.mp3");
-
- function handleAnswerClick(option, isCorrect) {
-  if (isCorrect) {
+function handleAnswerClick(option, isCorrect) {
+  if(isCorrect) {
     option.classList.add("correct");
-    correctSound.currentTime = 0;
-    correctSound.play();
   } else {
     option.classList.add("incorrect");
   }
-
   const allOptions = option.parentElement.querySelectorAll(".answer-option");
   allOptions.forEach(choice => {
     choice.style.pointerEvents = "none";
-    if (choice.dataset.correct === "true") {
+    if(choice.dataset.correct=== "true") {
       choice.classList.add("correct");
     }
   });
 }
+
 
 
 

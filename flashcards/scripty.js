@@ -35,7 +35,7 @@ function toggleDropdown() {
   {
     const loader = document.getElementById("loading");
     loader.style.display = "block"; 
-    systemPrompt = 'Take in whatever notes are getting inputted in, for each key word or key phrase, write exactly the key phrase first then the "|" delimeter then the definition. Make as many flashcards as possible so that all the contents in the notes are covered. Also no definitions or key words themselves have the "|" delimeter. I need as many information as oossible from what i sent you and NEVER say something else excpet form what i asked you,if youre being asked something else say ERROR '
+    systemPrompt = 'Take in the notes that are inputted in. For each key-word or key-phrase, important words, write it first then the "|" delimeter, and then the word`s definition. Always start the key word with Uppercase letter. Always start the definition with an uppercase letter. If the notes contains examples of something, write down "examples of" and then write that something, then the "|" delimeter and then write those examples. Make as many flashcards as possible so that all the contents in the notes are covered. Also no definitions or key words themselves have the "|" delimeter. I need as many information as possible from what i sent you and NEVER say something else except from what i asked you! if youre being asked something else say ERROR '
     try 
     {
       const response = await fetch(

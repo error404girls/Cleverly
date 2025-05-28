@@ -54,19 +54,26 @@ function displayy() {
 function startTimer() {
     if (ok === 1) return;
     ok = 1;
-    time = setInterval(() => {
+    time = setInterval(function () {
         if (tleft > 0) {
             tleft--;
             displayy();
         } else {
             clearInterval(time);
             ok = 0;
-            const alertText = mode === "study"
-                ? "Time's up! Take a short break!"
-                : "Break over! Go back to studying!";
+            let alertText;
+            if(mode === "study")
+            {
+                mode = "break";
+                alertText = "O pauză scurtă nu dăunează nimănui!";
+            }
+            else
+            {
+                mode = "study";
+                alertText = "Pauza s-a terminat!";
+            }
+            
             document.querySelector("#costum_alert p").textContent = alertText;
-
-            mode = (mode === "study") ? "break" : "study";
 
             const [minutes, seconds] = mode === "study"
                 ? getInputTime("minutes_input", "seconds_input")
@@ -91,11 +98,11 @@ function resetTimer() {
 
 
 document.getElementById("start").addEventListener("click", function () {
-    if (this.textContent === "start" || this.textContent === "resume") {
-        this.textContent = "pause";
+    if (this.textContent === "start" || this.textContent === "reia") {
+        this.textContent = "pauză";
         startTimer();
     } else {
-        this.textContent = "resume";
+        this.textContent = "reia";
         pauseTimer();
     }
 });
@@ -161,7 +168,7 @@ function resetfnc() {
 
     document.getElementById("costumize_menu").style.display = "none";
 
-    document.getElementById("start").textContent = "start"; 
+    document.getElementById("start").textContent = "start";
     resetTimer();
 }
 
@@ -175,7 +182,7 @@ function savefnc() {
 
 function close_alert() {
     document.getElementById("costum_alert").style.display = "none";
-    startTimer(); 
+    startTimer();
 }
 
 setTimer(); 

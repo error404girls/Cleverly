@@ -10,5 +10,9 @@ Codul pentru extragerea textului din fișierele de tip Imagine a fost preluat de
 
 Inspirație pentru meniul lateral: https://www.w3schools.com/howto/howto_js_sidenav.asp
 
+Iconițele (cea pentru meniu, butoanele de navigare pentru flashcards etc.) au fost luate de pe font-awesome: https://fontawesome.com/search?q=next&o=r&s=solid&ip=classic
+
+Fontul folosit (Poppins) este de la Google fonts: https://fonts.google.com/selection/embed
+
 
 

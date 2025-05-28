@@ -9,17 +9,6 @@ header{
     top:10px;
     display: flex; justify-content: space-between;
 }
-#limba{
-    left: 10px; width: 60px;
-    background-color: #606095;
-    border: none; border-radius: 10px; color: white;
-    font-family: Poppins; font-size: 20px;
-    cursor: pointer; transition: 0.3s;
-}
-#limba:hover{
-    background-color: #39397c;
-    transform: scale(105%);
-}
 #logo{
     width: 120px; right: 10px;
 }

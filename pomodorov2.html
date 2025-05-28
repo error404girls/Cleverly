@@ -1,0 +1,89 @@
+<html>
+
+
+<head>
+   <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="cleverly">
+  <title>cleverly</title>
+  <link rel="stylesheet" href="pv2.css" />
+  <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="icon" type="image/x-icon" href="images/logo_blue.png">
+
+</head>
+
+
+<body>
+
+    <div id="menu">
+        <ul>
+            <li><a href="FC.html">flashcards</a></li>
+               <li><a href="quiz.html">Quiz</a></li>
+            <li><a href="about.html">about</a></li>
+        </ul>
+        <button id="costumize"  onclick="open_cm()">costumize</button>
+      
+    </div>
+    <div id="dd" onclick="whattodo()"><i class="fa-solid fa-bars"></i></div>
+    
+        <div id="logo"><img src="images/logo_blue.png"></div>
+        <div id="timer_container">
+
+            <div id="timer">30:00</div>
+            <div class="buttons">
+                <button id="start">start</button>
+                <button id="reset">reset</button>
+            </div>
+        </div>
+
+    <div id="costumize_menu">
+        <div id="cancel_button">
+            <i class="fa-solid fa-xmark"></i>
+        </div>
+        <form>
+            <label style="color: #39397c">timer:</label>
+            <div id="timer_costumization">
+                <label>minutes:</label>
+                <input id="minutes_input" type="number" value="30" max="59">
+                <label>seconds:</label>
+                <input id="seconds_input" type="number" value="0" max="59">
+            </div>
+            <label style="color: #39397c">break time:</label>
+            <div id="break_time">
+                <label>minutes:</label>
+                <input id="minutes_break" type="number" value="5" max="59">
+                <label>seconds:</label>
+                <input id="seconds_break" type="number" value="0" max="59">
+            </div>
+            <label style="color: #39397c">colors:</label>
+            <div class="part">
+                <label>background color:</label>
+                <input id="bg_color" type="color" value="#a9b7da">
+            </div>
+
+            <div class="part">
+                <label>font color:</label>
+                <input id="font_color" type="color" value="#39397c">
+            </div>
+
+            <div class="part">
+                <label>buttons color:</label>
+                <input id="btn_color" type="color" value="#a9b7da">
+            </div>
+
+            <div class="buttons" style="margin-top: 20px">
+                <button type="button" onclick="savefnc()">save</button>
+                <button type="button" onclick="resetfnc()">reset</button>
+            </div>
+        </form>
+    </div>
+
+    <div id="costum_alert">
+        <p></p>
+        <button onclick="close_alert()">ok</button>
+    </div>
+    <script src="script_pomodoro.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,126 @@
+body{
+    background-color: #a9b7da;
+    padding: 10px; font-family: Poppins;
+}
+
+
+#logo{
+    width: 100px;
+    position: absolute;
+    right: 10px; Top:20px;
+}
+#logo img{
+    width: 100px;
+    
+}
+
+#menu{
+    display: flex; flex-direction: column; justify-content: space-between; align-items: center;
+    background-color:  rgb(255, 255, 255);
+    height: 100%; width: 0; padding-top: 60px; padding-bottom: 0;
+    position: fixed; left: 0; top: 0; z-index: 1;
+    overflow-x: hidden; transition: 0.5s;
+}
+#dd{
+    position: relative;
+    font-size: 30px; z-index: 2;
+    color: #39397c;
+    cursor: pointer;
+}
+#menu ul{
+    display: flex; flex-direction: column; align-items: center; gap: 10px;
+    list-style: none; padding: 0;
+}
+#menu li{
+    display: flex; align-items: center; justify-content: center;
+    background-color:#a9b7da;
+    width: 120px; height: 40px; border-radius: 20px;
+}
+#menu li a {
+    color: #39397c;
+    text-decoration: none;
+}
+#costumize{
+   position: relative;
+    margin-bottom: 100px;
+}
+
+#timer_container{
+    background-color: rgba(255, 255, 255, 0.558); border-radius: 10px; backdrop-filter: blur(5px);background-color: rgba(255, 255, 255, 0.558);
+    width: 60%; aspect-ratio: 16/9;
+    position: relative; left: 50%; top: 50%; transform: translate(-50%, -50%);
+    display: flex; flex-direction: column; justify-content: center; align-items: center;
+}
+#timer{
+    color: #39397c;
+    width: 100%; text-align: center;
+    font-size: 20%;
+}
+.buttons{
+    display: flex; width: 100%; justify-content: center;
+    gap: 30px; flex-wrap: wrap;
+}
+button{
+    background-color:#a9b7da;
+    border: none; border-radius: 20px; width: 120px; height: 40px;
+    color:#39397c; transition: 0.3s; font-family: Poppins; font-size: 15px;
+    cursor: pointer; 
+}
+.buttons button{
+    width: 30%;
+}
+button:hover{
+    background-color: #8e9bba;
+    transform: scale(105%);
+}
+#costumize_menu{
+    background-color: rgba(255, 255, 255, 0.528); backdrop-filter: blur(10px);
+    display: none; align-items: center; justify-content: center; flex-direction: column;
+    position: absolute; z-index: 2; top: 0; left: 0;
+    height: 100%; width: 100%; font-size: 20px;
+}
+#cancel_button{
+    position: absolute;
+    top: 20px; right: 20px;
+}
+#cancel_button i{
+    font-size: 30px;
+}
+#cancel_button:hover{
+    cursor: pointer;
+}
+#costumize_menu form{
+    display: flex; flex-direction: column; 
+    gap: 15px;
+}
+#costumize_menu form input{
+    font-size: 20px; width: 50px;
+    border: none; border-radius: 10px;
+}
+#costum_alert{
+    height: 200px; width: 300px; position: absolute; top: 10px; left: 50%; transform: translate(-50%);
+    border-radius: 20px; background-color: white; display: none; flex-direction: column; justify-content: center; align-items: center;
+}
+@media (max-width: 800px)
+{
+    #buttons{
+        font-size: 15px;
+    }
+}
+@media (max-width: 600px)
+{
+    #timer_container{
+        width: 90%;
+        height: 600px;
+    }
+    #timer{
+        margin-top: 80px;
+        font-size: 100px !important;
+    }
+    #timer_container .buttons{
+        flex-direction: column;
+        margin: auto;
+        gap: 10px;
+        align-items: center;
+    }
+}

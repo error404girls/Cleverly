@@ -42,7 +42,7 @@ function toggleDropdown() {
   const loader = document.getElementById("loading");
   loader.style.display = "block";
 
-  const systemPrompt = `Do not repeat the answer order. Do not put the corrcet answer in the middle always.33Do not number the questions or use any bold formatting. 
+  const systemPrompt = `Do not repeat the answer order. Do not put the correct answer in the middle everytime. Do not number the questions or use any bold formatting. 
 I want you to generate interactive multiple-choice questions based on the input I provide.  
 Always put the correct answers in different orders. Don't repeat the position of the correct answers. 
 Make it strategic to train the brain. Don’t leave out any important information. 

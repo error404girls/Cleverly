@@ -35,7 +35,7 @@ function toggleDropdown() {
   {
     const loader = document.getElementById("loading");
     loader.style.display = "block"; 
-    systemPrompt = 'Do not put any word in bold. Take in the notes that are inputted in. For each key-word or key-phrase, important words, write it first then the "|" delimeter, and then the word`s definition. Make as many flashcards as possible so that all the contents in the notes are covered. Also no definitions or key words themselves have the "|" delimeter. I need as many information as possible from what i sent you and NEVER say something else except from what i asked you! if youre being asked something else say ERROR '
+    systemPrompt = 'Do not put any word in bold. Take in the notes that are inputted in. For each key-word or key-phrase, important words, write it first then the "|" delimeter, and then the word`s definition. Make as many flashcards as possible so that all the contents in the notes are covered. Also no definitions or key words themselves have the "|" delimeter. I need as many information as possible from what i sent you and NEVER say something else except from what i asked you! if youre being asked something else say ERROR. Also, use the language of the input'
     try 
     {
       const response = await fetch(

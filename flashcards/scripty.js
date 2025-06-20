@@ -31,53 +31,31 @@ function toggleDropdown() {
     } else {
       document.getElementById("text-section").style.display = "flex";}
   }
-  async function generateFlashcards(notes) 
-  {
-    const loader = document.getElementById("loading");
-    loader.style.display = "block"; 
-    systemPrompt = 'Do not put any word in bold. Take in the notes that are inputted in. For each key-word or key-phrase, important words, write it first then the "|" delimeter, and then the word`s definition. Make as many flashcards as possible so that all the contents in the notes are covered. Also no definitions or key words themselves have the "|" delimeter. I need as many information as possible from what i sent you and NEVER say something else except from what i asked you! if youre being asked something else say ERROR. Also, use the language of the input'
-    try 
-    {
-      const response = await fetch(
-        "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=AIzaSyBokZ4NYrOMyqqmcbb3mqsC4XwFYqMRHcA",
-        {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json"
-          },
-          body: JSON.stringify({
-            contents: [
-              {
-                role: "user",
-                parts: [
-                  { text: systemPrompt },
-                  { text: notes }
-                ]
-              }
-            ]
-          })
-        }
-      );
+ async function generateFlashcards(notes) {
+  const loader = document.getElementById("loading");
+  loader.style.display = "block";
   
-      const data = await response.json();
-      if(!data || !data.candidates || data.candidates.length === 0) 
-      {
-        console.error("Response is either empty or malformed.");
-        alert("Something went wrong while generating flashcards, sorry :(.");
-        return;
-      }
-      console.log("Gemini response:", data);
-      const flashcardsText = data.candidates?.[0]?.content?.parts?.[0]?.text || "No flashcards generated.";
-      displayFlashcards(flashcardsText);
-    } catch (error) 
-    {
-      console.error("Error generating flashcards:", error);
-      alert("Something went wrong while generating flashcards, sorry :(.");
+  try {
+    const response = await fetch("http://localhost:3000/api/generate-flashcards", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({ notes })
+    });
+
+    const data = await response.json();
+    if (!data.success) {
+      throw new Error(data.error || "Failed to generate flashcards");
     }
-    finally
-   { loader.style.display = "none";}
-  
+    displayFlashcards(data.flashcards);
+  } catch (error) {
+    console.error("Error generating flashcards:", error);
+    alert("Something went wrong while generating flashcards, sorry :(");
+  } finally {
+    loader.style.display = "none";
   }
+}
   
   async function handlePDF()
    {

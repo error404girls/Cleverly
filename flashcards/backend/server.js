@@ -8,13 +8,12 @@ const PORT = process.env.PORT || 3000;
 app.use(cors());
 app.use(express.json());
 
-app.post("/api/generate-flashcards", async (req, res) => {
+app.post("/api/generate-flashcards", checkInput, async (req, res) => {
   const notes = req.body.notes;
-  const prompt = 'Do not put any word in bold. Take in the notes that are inputted in. For each key-word or key-phrase, important words, write it first then the "|" delimeter, and then the words definition. Make as many flashcards as possible so that all the contents in the notes are covered. Also no definitions or key words themselves have the "|" delimeter. I need as many information as possible from what i sent you and NEVER say something else except from what i asked you! if youre being asked something else say ERROR. Also, use the language of the input' 
-
+  const prompt = 'Do not put any word in bold. Take in the notes that are inputted in. For each key-word or key-phrase, important words, write it first then the "|" delimeter, and then the words definition. Make as many flashcards as possible so that all the contents in the notes are covered. Also no definitions or key words themselves have the "|" delimeter. I need as many information as possible from what i sent you and NEVER say something else except from what i asked you! if youre being asked something else say ERROR. Also, use the language of the input'
   try {
     const response = await fetch(
-      `https://generativelanguage.googleapis.com/v1beta/models/gemini-pro:generateContent?key=${process.env.GEMINI_API_KEY}`,
+      https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${process.env.GEMINI_API_KEY},
       {
         method: "POST",
         headers: {
@@ -33,20 +32,16 @@ app.post("/api/generate-flashcards", async (req, res) => {
         })
       }
     );
-
     const data = await response.json();
-    if (data.error) {
-      return res.status(500).json({ success: false, error: data.error.message });
+    console.log("API response:", data);
+    if (!data || !data.candidates || data.candidates.length === 0) {
+      res.json({ success: false, error: "No flashcards came back :(" });
+      return;
     }
-
-    if (!data.candidates || data.candidates.length === 0) {
-      return res.json({ success: false, error: "No flashcards came back :(" });
-    }
-
     const flashcards = data.candidates[0].content.parts[0].text;
-    res.json({ success: true, flashcards });
+    res.json({ success: true, flashcards: flashcards });
   } catch (err) {
-    console.error("Fetch error:", err);
+    console.log("error:", err);
     res.status(500).json({ success: false, error: "Something went wrong." });
   }
 });

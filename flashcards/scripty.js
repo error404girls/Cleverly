@@ -150,7 +150,6 @@ function toggleDropdown() {
   }
   
   let flashcards = [];
-  let currentCardIndex = 0;
   function displayFlashcards(text) {
     const container = document.getElementById("flashcards-container");
     container.replaceChildren(); 
@@ -174,16 +173,6 @@ function toggleDropdown() {
           defElement.textContent = def;
           defElement.style.display = "none";
   
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
           card.appendChild(termElement);
           card.appendChild(defElement);
           card.addEventListener("click", function () {
@@ -200,10 +189,12 @@ function toggleDropdown() {
   
     if (flashcards.length > 0) {
       container.appendChild(flashcards[currentCardIndex]);
+       document.getElementById("control-buttons").style.display = "flex";
       document.querySelector(".navigation-buttons").style.display = "flex";
       toggleNavigationButtons();
     } 
     else {
+          document.getElementById("control-buttons").style.display = "none";
       document.querySelector(".navigation-buttons").style.display = "none";
       container.innerHTML = "<p>No flashcards generated :( , try again.</p>";
     }
@@ -274,4 +265,16 @@ function toggleDropdown() {
     document.querySelector("#dd i").classList.add("fa-bars");
   }
   
-  
+
+let currentCardIndex = 0;
+
+function shuffleQuestions() {
+  if(flashcards.length<=1)
+    return;
+  for(let i=flashcards.length-1; i>0; i--) {
+    const j=Math.floor(Math.random()*(i+1));
+    [flashcards[i],flashcards[j]]=[flashcards[j], flashcards[i]];
+  }
+  currentCardIndex = 0;
+  updateDisplayedCard();
+}

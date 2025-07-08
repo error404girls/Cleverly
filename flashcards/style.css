@@ -363,3 +363,31 @@ h1 {
     padding: 0;
   }
 }
+
+.control-buttons {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   gap: 15px;
+   margin-bottom: 20px;
+}
+.control-buttons .button {
+   width: 120px;
+   height: 40px;
+   font-size: 14px;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   gap: 5px;
+   border-radius: 8px;
+   cursor: pointer;
+   font-family: 'Poppins', sans-serif;
+   transition: background-color 0.3s ease;
+   border: none;
+}
+
+.shuffle-btn {
+   background-color: #323995;
+   color: white;
+}
+

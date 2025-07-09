@@ -65,7 +65,6 @@
 
     </section>
 
-
     <div class="navigation-buttons" style="display: none;">
       <button class="button" id="prev-button" onclick="showPreviousCard()">
         <i class="fa-solid fa-circle-left"></i>
@@ -79,11 +78,16 @@
     <div class="loader" id="loading" style="display: none;"></div>
 
 <div class="control-buttons" id="control-buttons" style="display: none;">
-      <button class="button shuffle-btn" onclick="shuffleQuestions()">
-        <i class="fas fa-shuffle"></i> Shuffle
-      </button>
-    </div>
-
+  <button class="button shuffle-btn" onclick="shuffleQuestions()">
+    <i class="fas fa-shuffle"></i> Shuffle
+  </button>
+  <button class="button add-btn" onclick="addFlashcard()">
+    <i class="fa fa-plus"></i>add
+  </button>
+  <button class="button edit-btn" onclick="editFlashcard()">
+    <i class="fa fa-edit"></i>edit
+  </button>
+</div> 
     
 
   </div>

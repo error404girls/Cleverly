@@ -1,0 +1,106 @@
+body{
+    background-image: linear-gradient(120deg, #7ea1fa, #b893e9);
+    font-family: Poppins;
+}
+h1, p{
+    margin: 0;
+}
+.container{
+    position: relative; top: 50%; left: 50%; transform: translate(-50%, -50%);
+    background-color: rgba(255, 255, 255, 0.349);
+    min-height:650px; height: max-content; width: 60%; min-width: 300px; max-width: 600px;
+    border-radius: 15px; box-shadow: 0 2px 5px rgba(0, 0, 0, 0.473);
+}
+.header{
+    background-color: white; height: 120px;
+    border-top-left-radius: 15px; border-top-right-radius: 15px;
+    display: flex; justify-content: space-between; align-items: center;
+}
+.text{
+    margin: 20px; display: flex; flex-direction: column; gap: 10px;
+}
+.counter{
+    margin: 20px;
+    background-color: #7ea1fa;
+    display: flex; justify-content: center; align-items: center; gap: 2px;
+    height: 100px; width: 100px; border-radius: 100%;
+}
+section{
+    padding: 20px; 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.tasknou{
+    width: 100%; height: 60px;
+    display: flex; justify-content: space-between; align-items: center;
+   
+}
+.tasknou input{
+    background: none; border-radius: 10px; border: solid; border-color: #803ed6;
+    border-width: 1px; width: 87%; height: 40px; margin: 0; padding: 5px;
+    font-family: Poppins; transition: 0.3s;
+}
+.tasknou input:focus{
+    outline: none;
+    border-color: #133bec;
+}
+.tasknou button{
+    background: none; border: none;
+    width: 10%; margin: 0; padding: 0; height: 50px;
+} 
+.tasknou button i{
+    font-size: 30px;
+    color:#1b49bd;
+    transition: 0.3s;
+}
+.tasknou button i:hover{
+    transform: scale(110%);
+    cursor: pointer;
+}
+.taskuri{
+    margin-top: 20px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.task{
+    display: flex; justify-content: space-between; align-items: center;
+    border: solid; border-width: 1px; border-color: #7ea1fa;
+    border-radius: 10px; height: 50px; width: 100%;
+}
+.task .input input{
+    display: none;
+}
+.task .input label{ 
+    display: flex; justify-content: center; align-items: center;
+    border: solid; border-width: 1px; border-color: #133bec;
+    border-radius: 100%; width: 20px; height: 20px; margin-left: 10px;
+    transition: 0.3s;
+}
+.task .input label i{
+    font-size: 10px;
+    display: none;
+}
+.task .input input:checked + label{
+    background-color: #1b49bd;
+}
+
+.task .input input:checked + label i{
+    display: inline;
+    color: white;
+}
+.delete button{
+    background: none; border: none; margin-right: 10px;
+}
+.delete button i{
+    transition: 0.3s;
+    font-size: 20px;
+    color:#1b49bd;
+}
+.delete button i:hover{
+    transform: scale(110%);
+    cursor: pointer;
+}

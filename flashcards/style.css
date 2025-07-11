@@ -371,16 +371,16 @@ h1 {
     align-items: center;
   }
   .control-buttons .button {
-    width: 70px;
+    width: 48px;
     min-width: 0;
-    max-width: 90px;
-    height: 32px;
-    font-size: 12px;
-    padding: 0 6px;
+    max-width: 60px;
+    height: 28px;
+    font-size: 10px;
+    padding: 0 2px;
     gap: 3px;
   }
   .control-buttons .button i {
-    font-size: 15px;
+    font-size: 13px;
   }
 }
 

@@ -363,22 +363,24 @@ h1 {
     padding: 0;
   }
    .control-buttons {
-    flex-direction: column;
-    gap: 10px;
+    flex-direction: row !important;
+    gap: 8px;
     width: 100%;
-    margin-bottom: 15px;
+    margin-bottom: 10px;
+    justify-content: center;
+    align-items: center;
   }
   .control-buttons .button {
-    width: 90vw;
+    width: 70px;
     min-width: 0;
-    max-width: 100%;
-    height: 48px;
-    font-size: 16px;
-    padding: 0 10px;
-    justify-content: flex-start;
+    max-width: 90px;
+    height: 32px;
+    font-size: 12px;
+    padding: 0 6px;
+    gap: 3px;
   }
   .control-buttons .button i {
-    font-size: 20px;
+    font-size: 15px;
   }
 }
 

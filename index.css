@@ -1,61 +1,111 @@
-body{
-    background-color: #a9b7da;
+body {
+    background-image: linear-gradient(120deg, #7ea1fa, #b893e9);
     font-family: Poppins;
     overflow-x: hidden;
 }
 
-header{
-    width: 100%; position: relative;
-    top:10px;
-    display: flex; justify-content: space-between;
-}
-#logo{
-    width: 120px; right: 10px;
-}
-#logo img{
-    width: 120px;
-}
-#content{
-    position: absolute;
-    width: 100%; top: 20%; left: 0;
-    display: flex; justify-content: center; align-items: center; gap: 150px;
-}
-#section, #image{
-    width: 40%;
-}
-#image img{
-    width: 80%;
-}
-#image{
-    display: flex; align-items: center; justify-content: center;
-}
-#section h1{
-    font-size: 80px; color: #39397c; font-weight: 700;
-    text-shadow: 8px 2px 0 #606095; padding: 0; padding-bottom: 10px; margin: 0;
-} 
-#section p{
-    font-size: 20px;
-}
-#section button{
-    font-family: Poppins; font-size: 20px; background-color: #595985; color: white; width: 200px; height: 60px; border: none; border-radius: 30px; transition: 0.3s;
-}
-#section button:hover{
-    background-color: #39397c;
-    transform: scale(105%); 
-    cursor: pointer;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-@media (max-width: 750px)
-{
-    #content{
-        flex-direction: column;
-        gap: 30px;
-    }
-    #section, #image{
-        width: 80%;
-        display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center;
-    }
-    #section h1{
-        font-size: 60px;
+header{
+    background-color: white; padding: 20px;
+    display: flex; justify-content: space-between; align-items: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    position: sticky; top: 0; z-index: 1000;
+}
+
+.logo img {
+    width: 150px;
+}
+.links {
+    display: flex; flex-wrap: wrap;
+    gap: 10px;
+}
+.links a{
+    text-decoration: none; transition: 0.3s;
+    color:rgb(0, 43, 150);
+}
+.links a:hover{
+    color: rgb(151, 151, 151);
+}
+.banner{
+    padding: 80px 20px;
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.526);
+}
+.banner h1{
+    font-size: 40px;
+    margin-bottom: 20px;
+}
+.banner p{ 
+    font-size: 20px; margin-bottom: 20px;
+    color: rgb(47, 80, 162);
+   
+}
+.banner button {
+    font-family: Poppins; font-size: 16px;
+    padding: 20px;
+    background-color: #b893e9; color: white;
+    border: none; border-radius: 15px;
+    cursor: pointer; transition: 0.3s;
+}
+.banner button:hover {
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.319);
+}
+
+section {
+    padding: 100px 50px;
+    width: 100%;
+    display: flex; flex-direction: column;
+}
+
+section h2 {
+    text-align: center;
+    margin-bottom: 30px; font-size: 30px;
+}
+
+.features {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.card {
+    background: white;
+    padding: 20px;border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+}
+
+.card h3 {
+    margin-bottom: 10px;
+    color:#2051ce;
+}
+
+.card p {
+    color: rgb(91, 91, 91);
+}
+.faq{
+    background-color: white;
+    margin-bottom: 20px;
+    padding: 20px; border-radius: 15px; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+}
+.faq h3{
+    color:#2051ce;
+    font-size: 16px; margin-bottom: 10px;
+}
+
+footer {
+    background: white;
+    padding: 20px;
+    margin-top: 60px;
+}
+
+@media (min-width: 768px) {
+    .banner h1 {
+        font-size: 50px;
     }
 }

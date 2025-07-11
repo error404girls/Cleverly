@@ -8,33 +8,81 @@
     <link rel="stylesheet" href="index.css" />
     <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
-    <link rel="icon" type="image/x-icon" href="images/logo_blue.png">
-
+    <link rel="icon" type="image/x-icon" href="/images/logo_blue.png">
 </head>
 
 <body>
 
     <header>
-        <div id="logo"><img src="images/logo_blue.png"></div>
+        <div class="logo"><img src="/images/logo_blue.png"></div>
+        <div class="links">
+            <a href="#features">Funcționalități</a>
+            <a href="#faq">FaQ</a>
+        </div>
     </header>
 
-    <div id="content">
-        <div id="section">
-            <h1>Cleverly</h1>
-            <p id="text">Transformă-ți lecțiile în Flashcard-uri generate cu inteligență artificială și testează-ți
-                cunoștințele! Îmbunătățește-ți capacitatea de concentrare și randamentul prin metoda Pomodoro. Tot ce ai
-                nevoie pentru a învăța mai eficient, într-un singur loc.</p>
-            <a href="flashcards/FC.html">
-                <button id="incepe">Începe</button>
-            </a>
-        </div>
-
-        <div id="image">
-            <img src="images/notesss.PNG">
-        </div>
+    <div class="banner" id="start">
+        <h1>Cleverly – Organizează. Învață. Automatizează.</h1>
+        <p>Importă conținut, extrage automat conceptele cheie și generează materiale de învățare. Adaugă sarcini,
+            folosește Pomodoro și menține-ți progresul într-un singur loc.</p>
+        <a href="index.html"><button>Începe</button></a>
     </div>
 
-</body>
+    <section id="features">
+        <h2>Funcționalități principale</h2>
+        <div class="features">
+            <div class="card">
+                <h3>📄 Flashcarduri</h3>
+                <p>Încarcă orice material în format PDF sau text, iar prin intermediul IA sunt extrase ideile principale
+                    sub formă de flashcarduri.</p>
+            </div>
+            <div class="card">
+                <h3>📚 Teste de tip quiz</h3>
+                <p>Teste de tip quiz generate automat cu IA pe baza materialelor introduse în format PDF sau text.</p>
+            </div>
+            <div class="card">
+                <h3>⏱️ Timer Pomodoro</h3>
+                <p>Îmbunătățește-ți capacitatea de concentrare și randamentul prin metoda Pomodoro.</p>
+            </div>
+            <div class="card">
+                <h3>✅ Task Manager</h3>
+                <p>Task Manager te ajută să-ți structurezi ziua, să te ții de plan și să finalizezi tot ce ți-ai propus
+                    fără stres.</p>
+            </div>
+        </div>
+    </section>
 
+    <section class="section" id="faq">
+        <h2>Întrebări frecvente</h2>
+        <div class="faq">
+            <h3><strong>1.</strong> Ce tipuri de fișiere pot încărca?</h3>
+            <p>Poți încărca fișiere de tip PDF sau poți insera conținut direct prin copy-paste.</p>
+        </div>
+        <div class="faq">
+            <h3><strong>2.</strong> Cum funcționează task managerul?</h3>
+            <p>Poți crea, edita și șterge taskuri. Taskurile sunt salvate local în browser.</p>
+        </div>
+        <div class="faq">
+            <h3><strong>3.</strong> Este Cleverly gratuit?</h3>
+            <p>Da, Cleverly este complet gratuit și poate fi utilizat de oricine.</p>
+        </div>
+        <div class="faq">
+            <h3><strong>4.</strong> Am nevoie de cont?</h3>
+            <p>Nu. Poți testa funcționalitățile de bază fără să creezi un cont.</p>
+        </div>
+    </section>
+
+    <footer> </footer>
+
+    <script>
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href'))
+                    .scrollIntoView({ behavior: 'smooth' });
+            });
+        });
+    </script>
+</body>
 
 </html>

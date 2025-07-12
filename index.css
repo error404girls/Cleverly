@@ -48,7 +48,7 @@ header{
 .banner button {
     font-family: Poppins; font-size: 16px;
     padding: 20px;
-    background-color: #b893e9; color: white;
+    background-color: #7448af; color: white;
     border: none; border-radius: 15px;
     cursor: pointer; transition: 0.3s;
 }

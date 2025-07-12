@@ -33,7 +33,7 @@ function addNewTask({ task, id, done }) {
     </div>
     <div class="nume"> </div>
     <div class="delete">
-        <button><i class="fa-solid fa-trash"></i></button>
+        <button id="gunoi-${id}"><i class="fa-solid fa-trash"></i></button>
     </div>
     `;
 

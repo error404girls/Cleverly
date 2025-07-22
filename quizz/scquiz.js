@@ -52,7 +52,7 @@ MAKE AS MANY AS YOU CAN. ANSWER IN THE LANGUAGE OF THE INPUT.`;
 
   try {
     const response = await fetch(
-      "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=AIzaSyBkazYWXa-gMEd8DU5n46xPGCnvt2nP_hY",
+      "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=AIzaSyB_WoqniusYawIVp1l5ueJUD06zuCaIr2o",
       {
         method: "POST",
         headers: { "Content-Type": "application/json" },

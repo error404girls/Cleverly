@@ -7,7 +7,7 @@ body{
 #logo{
     width: 100px;
     position: absolute;
-    right: 10px; Top:20px;  z-index: 1000;
+    right: 10px; Top:20px;  z-index: 500;
 }
 #logo img{
     width: 100px;
